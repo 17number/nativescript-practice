@@ -2,7 +2,7 @@
   <Page>
     <ActionBar title="Welcome to NativeScript-Vue!" />
     <GridLayout columns="*" rows="*">
-      <Label class="message" :text="msg" col="0" row="0" />
+      <Label class="message red_to_green" :text="msg" col="0" row="0" />
     </GridLayout>
   </Page>
 </template>
@@ -43,5 +43,16 @@
     ActionBar {
       color: #ffffff;
     }
+  }
+
+  @keyframes red_to_green {
+    0% { background-color: red; }
+    50% { background-color: green; }
+    100% { background-color: red; }
+  }
+  .red_to_green {
+    animation-name: red_to_green;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
 </style>
