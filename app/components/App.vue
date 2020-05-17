@@ -1,8 +1,9 @@
 <template>
   <Page>
     <ActionBar title="Welcome to NativeScript-Vue!" />
-    <GridLayout columns="*" rows="*">
+    <GridLayout columns="*" rows="*,*">
       <Label class="message red_to_green" :text="msg" col="0" row="0" />
+      <Label class="message rotation" text="R" col="0" row="1" />
     </GridLayout>
   </Page>
 </template>
@@ -53,6 +54,18 @@
   .red_to_green {
     animation-name: red_to_green;
     animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes rotation {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(180); }
+    100% { transform: rotate(360); }
+  }
+  .rotation {
+    animation-name: rotation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 </style>
