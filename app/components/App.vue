@@ -1,9 +1,10 @@
 <template>
   <Page>
     <ActionBar title="Welcome to NativeScript-Vue!" />
-    <GridLayout columns="*" rows="*,*">
-      <Label class="message red_to_green" :text="msg" col="0" row="0" />
-      <Label class="message rotation" text="R" col="0" row="1" />
+    <GridLayout columns="*" rows="*,*,*">
+      <Label class="message" :class="{ red_to_green: isAnimating }" :text="msg" col="0" row="0" />
+      <Label class="message" :class="{ rotation: isAnimating }" text="R" col="0" row="1" />
+      <Button text="On/Off" @tap="toggleAnimation" col="0" row="2" />
     </GridLayout>
   </Page>
 </template>
@@ -12,9 +13,15 @@
   export default {
     data() {
       return {
-        msg: 'Hello World!'
+        msg: 'Hello World!',
+        isAnimating: false,
       }
-    }
+    },
+    methods: {
+      toggleAnimation() {
+        this.isAnimating = !this.isAnimating;
+      },
+    },
   }
 </script>
 
