@@ -1,10 +1,11 @@
 <template>
   <Page>
     <ActionBar title="Welcome to NativeScript-Vue!" />
-    <GridLayout columns="*" rows="*,*,*">
+    <GridLayout columns="*" rows="*,*,*,*">
       <Label class="message" :class="{ red_to_green: isAnimating }" :text="msg" col="0" row="0" />
       <Label class="message" :class="{ rotation: isAnimating }" text="R" col="0" row="1" />
-      <Button text="On/Off" @tap="toggleAnimation" col="0" row="2" />
+      <Label class="message fas" :class="{ rotation: isAnimating }" :text="get_fa_text('fa-redo')" col="0" row="2" />
+      <Button text="On/Off" @tap="toggleAnimation" col="0" row="3" />
     </GridLayout>
   </Page>
 </template>
